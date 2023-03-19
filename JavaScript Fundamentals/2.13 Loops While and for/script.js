@@ -41,5 +41,5 @@ while (true) {
 
     if (enteredNumber > 100 || !enteredNumber) {
         break
-    }
+    };
 }

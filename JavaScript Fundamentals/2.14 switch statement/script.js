@@ -11,7 +11,6 @@ if (browser == "edge") {
 let a = +prompt('a?', "");
 
 switch (a) {
-    
     case 0:
         alert(0);
         break;
