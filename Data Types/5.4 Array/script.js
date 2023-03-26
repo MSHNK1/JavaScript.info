@@ -21,3 +21,33 @@ styles.shift();
 alert(styles);
 styles.unshift("Rap", "Reggae");
 alert(styles);
+
+//N3
+let arr = ["a", "b"];
+
+arr.push(function() {
+  alert( this );
+});
+
+arr[2](); // a, b, funcion() {alert(this)}
+
+
+//N4
+let promptArr =[];
+let sumArr = 0;
+(function sumInput() {
+    let promptValue = prompt("A number please?", 0);
+    
+    if (promptValue === null || promptValue === "" || !isFinite(promptValue)) {
+        return alert(sumArr)
+    } else {
+        promptArr.push(+promptValue);
+        sumArr += +promptValue;
+        sumInput();        
+    }
+})();
+
+
+//N5
+// I'l be back
+// Hasta la vista, baby
