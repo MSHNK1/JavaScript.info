@@ -1,7 +1,6 @@
 //N1
 function camelize(str) {
     let spltStr = str.split('-');
-
     for (let index = 1; index < spltStr.length; index++) {
         spltStr[index] = spltStr[index][0].toUpperCase() + spltStr[index].slice(1);
     }
@@ -76,24 +75,42 @@ alert( arr3 ); // HTML, JavaScript, CSS (no changes)
 
 
 
-// //N6
-// function Calculator() {
-//     this.calculate = function(str) {
-//         let strr = str.split(" ");
+//N6
+function Calculator() {
+    this.opMethods = {
+        "-": (a, b) => a - b,
+        "+": (a, b) => a + b
+    }
 
-//         // strr = strr.forEach(element => {
-//         //     +element
-//         // });
-//         // strr = strr.join(" + ");
-//         console.log(strr)
+    this.calculate = str => {
+        let splitStr = str.split(" ");
+        let a = +splitStr[0];
+        let op = splitStr[1];
+        let b = +splitStr[2];
         
-//         return alert(strr);
-//     }
-// }
+        return this.opMethods[op](a, b);
+    }
 
-// let calc = new Calculator;
+    this.addMethod = (key, value) => {
+        this.opMethods[key] = value;
+    }
+}
 
-// alert( calc.calculate("3 + 7 + 2 + 4") ); // 10
+let calc = new Calculator;
+
+alert( calc.calculate("3 + 7") ); // 10
+alert( calc.calculate("23 + 7") ); // 30
+alert( calc.calculate("63 - 17") ); // 46
+
+
+let powerCalc = new Calculator;
+
+powerCalc.addMethod("*", (a, b) => a * b);
+powerCalc.addMethod("/", (a, b) => a / b);
+powerCalc.addMethod("**", (a, b) => a ** b);
+
+let result = powerCalc.calculate("2 ** 3");
+alert( result ); // 8
 
 
 
