@@ -17,7 +17,26 @@ let salaries = {
     "Mary": 250
 };
 
-// function topSalary(salaries) {
-//     let topSalaryAmount = Math.max(Object.entries(salaries));
-//     return alert(topSalaryAmount);
-// }
+function topSalary(salaries) {
+    let topSalaryAmount = 0;
+    let topSalaryOwner = '';
+
+    // Without destructuring
+    // for (let salary of Object.entries(salaries)) {
+    //     if (salary[1] > topSalaryAmount) {
+    //         topSalaryAmount = salary[1];
+    //         topSalaryOwner = salary[0];
+    //     }
+    // }
+    
+    // With destructuring
+    for (let [name, salary] of Object.entries(salaries)) {
+        if (salary > topSalaryAmount) {
+            topSalaryAmount = salary;
+            topSalaryOwner = name;
+        }
+    }
+    return alert("Top-paid person is " + topSalaryOwner + " with salary of " + topSalaryAmount);
+}
+
+topSalary(salaries);

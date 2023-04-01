@@ -1,0 +1,19 @@
+<html lang="en">
+<body>
+    <script>
+
+        // let's check how much time is needed for some jobs
+
+        let start = Date.now(); // start measuring time
+    
+        // do the job
+        for (let i = 0; i < 100000; i++) {
+            let doSomething = i * i * i;
+        }
+    
+        let end = Date.now(); // end measuring time
+    
+        alert(`The loop took ${end - start} ms`);
+    </script>
+</body>
+</html>
