@@ -1,0 +1,174 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <style>
+        /* task 4 */
+        #field {
+            width: 200px;
+            height: 150px;
+            border: 10px solid black;
+            background-color: #00FF00;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        /* task 5 */
+        #menu li {
+            list-style: none;
+        }
+
+        /* task 6 */
+        .remove-button {
+            font-size: 110%;
+            color: darkred;
+            right: 10px;
+            width: 24px;
+            height: 24px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .pane {
+            background: #edf5e1;
+            padding: 10px 20px 10px;
+            border-top: solid 2px #c4df9b;
+        }
+
+        h3 {
+            margin: 0;
+            padding-bottom: 0.3em;
+            font-size: 1.1em;
+        }
+
+        p {
+            margin: 0;
+            padding: 0 0 0.5em;
+        }
+
+
+        /* task 7 */
+        .arrow {
+            padding: 0;
+            background: #ddd;
+            border-radius: 15px;
+            border: 1px solid gray;
+            font-size: 24px;
+            line-height: 24px;
+            color: #444;
+            display: block;
+        }
+
+        .arrow:hover {
+            background: #ccc;
+            cursor: pointer;
+        }
+        #carousel {
+            position: relative;
+            width: min-content;
+            padding-inline: 50px;
+        }
+        #ulContainer {
+            width: 390px;
+            overflow: hidden;
+        }
+
+        #carousel ul {
+            display: flex;
+            height: 130px;
+            width: 9999px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            font-size: 0;
+        }
+
+        #carousel ul img {
+            width: 130px;
+            height: 130px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body style="height: 2000px;">
+    <input type="button" id="hider" value="Click to hide the text" />
+
+    <div id="text">Text</div>
+
+    Click on a field to move the ball there.
+    <br> The ball should never leave the field.
+
+
+    <div id="field">
+        <img src="https://en.js.cx/clipart/ball.svg" id="ball">
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . .
+        . . . . . . . . . . . . . . . . . . . . . . . .
+    </div>
+
+    <div id="menu">
+        <p id="toggler"><span id="span" style="color: green;">▼ </span>Sweeties (click me)!</p>
+        <ul>
+            <li>Cake</li>
+            <li>Donut</li>
+            <li>Honey</li>
+        </ul>
+    </div>
+
+    <p>The button code (may need to adjust CSS):</p>
+    <!-- <button class="remove-button">[x]</button> -->
+    <div>
+        <div class="pane">
+            <h3>Horse</h3>
+            <p>The horse is one of two extant subspecies of Equus ferus. It is an odd-toed ungulate mammal belonging to
+                the taxonomic family Equidae. The horse has evolved over the past 45 to 55 million years from a small
+                multi-toed creature, Eohippus, into the large, single-toed animal of today.</p>
+        </div>
+        <div class="pane">
+            <h3>Donkey</h3>
+            <p>The donkey or ass (Equus africanus asinus) is a domesticated member of the horse family, Equidae. The
+                wild ancestor of the donkey is the African wild ass, E. africanus. The donkey has been used as a working
+                animal for at least 5000 years.</p>
+        </div>
+        <div class="pane">
+            <h3>Cat</h3>
+            <p>The domestic cat (Latin: Felis catus) is a small, typically furry, carnivorous mammal. They are often
+                called house cats when kept as indoor pets or simply cats when there is no need to distinguish them from
+                other felids and felines. Cats are often valued by humans for companionship and for their ability to
+                hunt vermin.
+            </p>
+        </div>
+    </div>
+
+
+
+    <!-- create your markup and styles -->
+
+    <div id="carousel">
+        <button class="arrow">⇦</button>
+        <button class="arrow">⇨</button>
+        <div id="ulContainer">
+            <ul>
+                <li><img src="https://en.js.cx/carousel/1.png"></li>
+                <li><img src="https://en.js.cx/carousel/2.png"></li>
+                <li><img src="https://en.js.cx/carousel/3.png"></li>
+                <li><img src="https://en.js.cx/carousel/4.png"></li>
+                <li><img src="https://en.js.cx/carousel/5.png"></li>
+                <li><img src="https://en.js.cx/carousel/6.png"></li>
+                <li><img src="https://en.js.cx/carousel/7.png"></li>
+                <li><img src="https://en.js.cx/carousel/8.png"></li>
+                <li><img src="https://en.js.cx/carousel/9.png"></li>
+                <li><img src="https://en.js.cx/carousel/10.png"></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
