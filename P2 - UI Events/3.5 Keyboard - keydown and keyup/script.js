@@ -1,4 +1,4 @@
-//N1 - Extended hotkeys
+//N1 - Extended hotkeys (simultaneously pressing some keys)
 function runOnKeys(func, ...codes) {
     let keys = [];
 
@@ -8,8 +8,6 @@ function runOnKeys(func, ...codes) {
 
         for (let code of codes) {
             if (!keys.includes(code)) {
-                // keys = [];
-                // console.log(keys);
                 return;
             }
         }
@@ -21,7 +19,7 @@ function runOnKeys(func, ...codes) {
 
     document.addEventListener("keyup", function (event) {
         let keyIndex = keys.indexOf(event.code);
-        
+
         if (keyIndex > -1) {
             keys.splice(keyIndex, 1);
         }
